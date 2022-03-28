@@ -10,16 +10,22 @@
     <div class="wrapper">
         <div class="1st_block">
             <div class="tnved_enter_code">
-                <form method="post" name="tnved_code_form" enctype="multipart/form-data" class="tnved_enter_code_form">
+<!--                <form action="{% url 'search_results' %}" method="get">-->
+<!--                    {% csrf_token %}-->
+<!--                  <input name="q" type="text" placeholder="Введите код">-->
+<!--                </form>-->
+                <!-- !!!!!!!!!!!! -->
+                <form method="get" action="{% url 'search_results' %}"
+                      enctype="multipart/form-data">
                     {% csrf_token %}
                     <fieldset>
                         <div>
                             <label class="tnved_enter_code_form_inputs">
                                 <span><strong>Введите проверяемый код ТН ВЭД:</strong></span>
-                                <input type="number" min="0" max="100000000000" step="1" id="input_5_vehicle_price" class="form-control"
-                                       style="width: 200px" placeholder="Введите код"> <!-- form-control -->
+                                <input type="text" class="form-control"
+                                       style="width: 200px" name="q" placeholder="Введите код"> <!-- form-control -->
                             </label>
-                            <input type="button" id="check" value="Проверка" class="b-1 input-btn">
+                            <button type="submit" class="reg_btn">Проверка</button>
                         </div>
                     </fieldset>
                 </form>
@@ -28,7 +34,7 @@
         <hr>
         <div class="2nd_block">
             <div>
-                <h4>Результаты проверки:</h4>
+<!--                <h4>Результаты проверки:</h4>-->
             </div>
         </div>
     </div>
