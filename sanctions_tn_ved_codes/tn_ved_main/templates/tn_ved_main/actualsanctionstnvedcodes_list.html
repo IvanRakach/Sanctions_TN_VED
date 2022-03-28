@@ -1,0 +1,18 @@
+{% extends 'tn_ved_main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main_content %}
+
+    <h1>Вывод результатов:</h1>
+
+    <ul>
+      {% for i in object_list %}
+        <li>
+          {{ i.sanctions_tn_ved_code }}, {{ i.sanctions_tn_ved_code_description }}, {{i.country_code_2_dig }}
+        </li>
+      {% endfor %}
+    </ul>
+
+{% endblock %}
