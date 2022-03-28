@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="{% static 'tn_ved_main/img/Logo_500-500.jpg' %}" alt="logo" width="250" height="250">
+        </div>
+        <div>
+            <div>
+                <p>Номер телефона поддержки: 5205</p>
+            </div>
+        </div>
+        <hr>
+    </header>
+
+    <main> <!-- class="clearfix" -->
+        {% block main_content %}
+        {% endblock %}
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'tn_ved_main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main_content %}
+
+    <h1>Проверка кодов ТН ВЭД на введенные санкции</h1>
+
+    <div class="wrapper">
+        <div class="1st_block">
+            <div class="tnved_enter_code">
+                <form method="post" name="tnved_code_form" enctype="multipart/form-data" class="tnved_enter_code_form">
+                    {% csrf_token %}
+                    <fieldset>
+                        <div>
+                            <label class="tnved_enter_code_form_inputs">
+                                <span><strong>Введите проверяемый код ТН ВЭД:</strong></span>
+                                <input type="number" min="0" max="100000000000" step="1" id="input_5_vehicle_price" class="form-control"
+                                       style="width: 200px" placeholder="Введите код"> <!-- form-control -->
+                            </label>
+                            <input type="button" id="check" value="Проверка" class="b-1 input-btn">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="2nd_block">
+            <div>
+                <h4>Результаты проверки:</h4>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
