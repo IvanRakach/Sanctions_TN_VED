@@ -1,0 +1,50 @@
+{% extends 'tn_ved_main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main_content %}
+
+{% for i in object_list %}
+
+<div class="wrapper_index">
+    <h3>Результат проверки кода ТН ВЭД "{{ i.sanctions_tn_ved_code }}":</h3>
+
+<!--    <ul>-->
+<!--      {% for i in object_list %}-->
+<!--        <li>            -->
+<!--            {{ i.sanctions_tn_ved_code }},-->
+<!--            {{ i.sanctions_tn_ved_code_description_eng }},-->
+<!--            {{ i.sanctions_tn_ved_code_description_rus }},-->
+<!--            {{ i.country_code_2_dig_1side }},-->
+<!--            {{ i.country_code_2_dig_2side }}-->
+<!--        </li>-->
+<!--      {% endfor %}-->
+<!--    </ul>-->
+
+    <table class="table_sanctions">
+            <tr class="table_header">
+                <td>Санкционный <br> код ТН ВЭД</td>
+                <td>Описание кода на англ.</td>
+                <td>Описание кода на рус.</td>
+                <td>Буквенный код страны, <br> которая ввела санкции</td>
+                <td>Буквенный код страны <br> против которой ввели санкции</td>
+            </tr>
+            <!-- цикл был тут -->
+            <tr>
+                <td class="outer">{{ i.sanctions_tn_ved_code }}</td>
+                <td class="outer">{{ i.sanctions_tn_ved_code_description_eng }}</td>
+                <td class="outer">{{ i.sanctions_tn_ved_code_description_rus }}</td>
+                <td style="text-align: center" class="outer">{{ i.country_code_2_dig_1side }}</td>
+                <td style="text-align: center" class="outer">{{ i.country_code_2_dig_2side }}</td>
+            </tr>
+            <!-- конец цикла был тут -->
+    </table>
+</div>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

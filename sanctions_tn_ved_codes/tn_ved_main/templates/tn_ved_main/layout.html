@@ -3,22 +3,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'tn_ved_main/css/tn_ved_main.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
     <header>
-        <div>
-            <a href="{% url 'home' %}">
-                <img src="{% static 'tn_ved_main/img/Logo_500-500.jpg' %}" alt="logo" width="250" height="250">
-            </a>
-        </div>
-        <div>
-            <div>
-                <p>Номер телефона поддержки: 5205</p>
+        <div class="wrapper_header">
+            <div class="header_block_0 clearfix">
+                <a href="{% url 'home' %}">
+                    <img class="header_block_1_img_1" src="{% static 'tn_ved_main/img/Logo_500-500.jpg' %}"
+                         alt="logo" width="125" height="125">
+                </a>
+            </div>
+            <div class="header_block_1 clearfix">
+                <a href="{% url 'home' %}" class="clearfix">
+                    <img class="header_block_1_img_2" src="{% static 'tn_ved_main/img/2.svg' %}"
+                         alt="logo" width="350" height="45">
+                </a>
+            </div>
+            <div class="header_block_2 clearfix">
+                <div class="">
+                    <div>Телефон поддержки: 0000</div>
+                    <div>База обновлена 00.00.0000</div>
+                </div>
+            </div>
+            <div class="header_block_3 clearfix">
+                <div class="">
+                    <div>Проверка кодов ТН ВЭД на введенные санкции</div>
+                </div>
             </div>
         </div>
-        <hr>
+
     </header>
 
     <main> <!-- class="clearfix" -->

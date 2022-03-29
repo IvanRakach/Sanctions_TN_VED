@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, FormView
+from django.views.generic import CreateView, ListView, FormView, TemplateView
 from django.db.models import Q
 from django.shortcuts import render
 
@@ -13,8 +13,11 @@ def index(request):
     }
     return render(request, 'tn_ved_main/index.html', context=param_for_render)
 
+# class HomePageView(TemplateView):
+#     template_name = 'home.html'
+
 # def show_search_results(request):
-#
+#     query = SanctionsTnvedCodes.objects.filter()
 #     param_for_render = {
 #
 #         'title': 'Результаты поиска'
@@ -23,11 +26,15 @@ def index(request):
 
 
 class SearchResultsView(ListView):
-    model = ActualSanctionsTnvedCodes
-    template_name = 'search_results.html'
+    model = SanctionsTnvedCodes  # !!!!!!!!!!!!!!!!!!!!!!
+    template_name = 'sanctionstnvedcodes_list.html'
 
-    def get_queryset(self):  # новый
+    def get_queryset(self):
         query = self.request.GET.get('q')
-        object_list = ActualSanctionsTnvedCodes.objects.filter(sanctions_tn_ved_code=query)
+        object_list = SanctionsTnvedCodes.objects.filter(sanctions_tn_ved_code=query)
+
+        # query_2 = self.request.GET.get('q')
+        # object_list_2 = SanctionsTnvedCodes.objects.filter(sanctions_tn_ved_code=query_2)
+
         return object_list
 

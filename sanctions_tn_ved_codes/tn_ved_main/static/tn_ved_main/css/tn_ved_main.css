@@ -1,0 +1,135 @@
+@charset "UTF-8";
+html{
+    background-color: #F6F5F4;
+}
+header{
+    width: 100%;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 2%;
+    background-color: #fff;
+}
+body{
+    margin: 0 auto;
+    width: 70%;
+    background-color: #fff;
+}
+.clearfix{
+    content: "";
+    display: table;
+}
+/*.wrapper_header{
+    margin: 0 auto;
+    margin-left: 15%;
+    margin-right: 1.5%;
+}*/
+.header_block_0{
+    margin: 0 auto;
+    margin-left: 5%;
+    width: 125px;
+    height: 150px;
+    display: block;
+    float: left;
+    /*background-color: lightyellow;*/
+}
+.header_block_1{
+    margin: 0 auto;
+    margin-left: 5%;
+    width: 40%;
+    height: 70px;
+    display: block;
+    float: left;
+    /*background-color: lightblue;*/
+}
+.header_block_1_img_2{
+    margin-top: 20px;
+    padding-left: 15px;
+}
+.header_block_2{
+    margin: 0 auto;
+    width: 30%;/*37.5%;*/
+    height: auto;
+    display: block;
+    float: left;
+    margin-top: 25px;
+    padding-left: 25px;
+    /*background-color: red;*/
+}
+.header_block_3{
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: block;
+    float: left;
+    /*background-color: lightgreen;*/
+}
+.header_block_3 div div{
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    height: 30px;
+    padding-top: 15px;
+    padding-left: 0px;
+    text-align: center;
+}
+
+
+.wrapper_index{
+    margin: 0 auto;
+    width: 80%;
+    height: 300px;  /* корректируем по кличеству стран */
+    /*background-color: lightblue;*/
+}
+.text{
+    margin: 0 auto;
+    width: 90%;
+    font-size: 14px;
+    text-align: justify;
+}
+.text h4{
+    text-align: center;
+}
+
+.2nd_block{
+    margin: 0 auto;
+}
+.countries_against_RF{
+    width: 48%;
+    display: block;
+    float: left;
+}
+
+.RF_against_countries{
+    width: 48%;
+    display: block;
+    float: left;
+}
+fieldset{
+    border-color: red;
+}
+.tnved_enter_code_form_inputs{
+    margin-left: 10%;
+}
+
+/* *** */
+.table_header td{
+    text-align: center;
+    color: #040546;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: lightblue;
+}
+
+.table_sanctions{
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.table_sanctions tr td{
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+.outer{
+   font-size: 12px;
+}
