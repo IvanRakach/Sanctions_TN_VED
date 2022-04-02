@@ -12,6 +12,7 @@ header{
 body{
     margin: 0 auto;
     width: 70%;
+    height: 250px;
     background-color: #fff;
 }
 .clearfix{
@@ -73,11 +74,14 @@ body{
     text-align: center;
 }
 
-
+main{
+    height: 425px;
+    background-color: #fff;
+}
 .wrapper_index{
     margin: 0 auto;
     width: 80%;
-    height: 300px;  /* корректируем по кличеству стран */
+    /*height: 300px;  /* корректируем по кличеству стран */
     /*background-color: lightblue;*/
 }
 .text{
@@ -104,6 +108,7 @@ body{
     display: block;
     float: left;
 }
+
 fieldset{
     border-color: red;
 }
@@ -128,7 +133,6 @@ fieldset{
 .table_sanctions tr td{
     border: 1px solid black;
     border-collapse: collapse;
-
 }
 .outer{
    font-size: 12px;

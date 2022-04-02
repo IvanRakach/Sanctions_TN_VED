@@ -31,7 +31,8 @@
                     <fieldset>
                         <div>
                             <label class="tnved_enter_code_form_inputs">
-                                <span><strong>Введите проверяемый код ТН ВЭД:</strong></span>
+                                <span><strong>Введите проверяемый код ТН ВЭД
+                                     или его описание на рус. или англ. языке:</strong></span>
                                 <input type="text" class="form-control"
                                        style="width: 200px" name="q" placeholder="Введите код"> <!-- form-control -->
                             </label>
@@ -43,17 +44,38 @@
         </div>
         <div class="2nd_block">
             <div class="countries_against_RF clearfix">
-                <ul>Список стран, которые ввели санкции в отношении РФ и РБ:
-                    <li>США;</li>
-                    <li>Англия;</li>
-                    <li>Германия;</li>
+                <ul>Список стран (и их ограничения), которые ввели санкции в отношении РФ и РБ:
+                    <li>
+                        <a href="">Все страны</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'usa_sanctions_list' %}">США</a>
+                    </li>
+                    <li>
+                        <a href="">Великобритания</a>
+                    </li>
+                    <li>
+                        <a href="">ЕС</a>
+                    </li>
+                    <li>
+                        <a href="">Япония</a>
+                    </li>
+                    <li>
+                        <a href="">Швейцария</a>
+                    </li>
+                    <li>
+                        <a href="">Канада</a>
+                    </li>
+                    <li>
+                        <a href="">Австралия</a>
+                    </li>
                 </ul>
             </div>
             <div class="RF_against_countries clearfix">
-                <ul>Список стран, в отношении которых РФ и РБ ввели ответные ограничения:
-                    <li>США;</li>
-                    <li>Англия;</li>
-                    <li>Германия;</li>
+                <ul>Ответные ограничения со стороны РФ и РБ:
+                    <li>РФ - 311</li>
+                    <li>РФ - 312</li>
+                    <li>РФ - 313</li>
                 </ul>
             </div>
         </div>
