@@ -84,8 +84,27 @@ main{
     /*height: 300px;  /* корректируем по кличеству стран */
     /*background-color: lightblue;*/
 }
+
+li{
+    list-style-type: none; /* Убираем маркеры у списка */
+}
+li:before{
+    content: "- ";
+}
+.country_links{
+    text-decoration: none;
+    color: black;
+}
+.country_links:hover{
+    color: red;
+    transition: 0.5s;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .text{
     margin: 0 auto;
+    margin-top: 5%;
     width: 90%;
     font-size: 14px;
     text-align: justify;
@@ -97,32 +116,52 @@ main{
 .2nd_block{
     margin: 0 auto;
 }
-.countries_against_RF{
+.countries_against_RU{
     width: 48%;
     display: block;
     float: left;
 }
 
-.RF_against_countries{
+.countries_against_RU_list li{
+    padding-top: 3px;
+    margin-left: 7%;
+}
+
+.RU_against_countries{
     width: 48%;
     display: block;
     float: left;
 }
+.RU_BY_restrictions_list{
+    margin-left: -6.5%;
+}
+.RU_BY_restrictions_list p{
+    padding-top: 4.5%;
+    margin-bottom: 5%;
+}
 
+.RU_BY_restrictions_list li{
+    padding-top: 3px;
+    margin-left: 7%;
+}
 fieldset{
     border-color: red;
 }
 .tnved_enter_code_form_inputs{
-    margin-left: 10%;
+    padding-left: 5%;
+}
+.search_block{
+    transform: translateY(10%); /* трансформируем элемент */
 }
 
 /* *** */
 .table_header td{
     text-align: center;
-    color: #040546;
+    color: #fff /*#040546*/;
     border: 1px solid black;
     border-collapse: collapse;
-    background-color: lightblue;
+    /*background-color: #FF0000;*/
+    background-color:  rgb(210, 0, 0);
 }
 
 .table_sanctions{
@@ -133,6 +172,7 @@ fieldset{
 .table_sanctions tr td{
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 3.5px;
 }
 .outer{
    font-size: 12px;

@@ -29,12 +29,16 @@
                       enctype="multipart/form-data">
                     {% csrf_token %}
                     <fieldset>
-                        <div>
+                        <div class="search_block">
                             <label class="tnved_enter_code_form_inputs">
-                                <span><strong>Введите проверяемый код ТН ВЭД
-                                     или его описание на рус. или англ. языке:</strong></span>
+                                <span>
+                                    <strong>
+                                        Ввод информации:
+                                    </strong>
+                                </span>
                                 <input type="text" class="form-control"
-                                       style="width: 200px" name="q" placeholder="Введите код"> <!-- form-control -->
+                                       style="width: 55%" name="q"
+                                       placeholder="Введите код ТН ВЭД или его описание"> <!-- form-control -->
                             </label>
                             <button type="submit" class="reg_btn">Проверка</button>
                         </div>
@@ -43,39 +47,62 @@
             </div>
         </div>
         <div class="2nd_block">
-            <div class="countries_against_RF clearfix">
-                <ul>Список стран (и их ограничения), которые ввели санкции в отношении РФ и РБ:
+            <div class="countries_against_RU clearfix">
+                <ul class="countries_against_RU_list">
+                    <p>
+                        Список стран (и их ограничения), которые ввели санкции в отношении РФ и РБ:
+                    </p>
                     <li>
-                        <a href="">Все страны</a>
+                        <a class="country_links" href="{% url 'all_other_sanctions_list' %}">Все страны</a>
                     </li>
                     <li>
-                        <a href="{% url 'usa_sanctions_list' %}">США</a>
+                        <a class="country_links" href="{% url 'au_sanctions_list' %}">Австралия</a>
                     </li>
                     <li>
-                        <a href="">Великобритания</a>
+                        <a class="country_links" href="{% url 'uk_sanctions_list' %}">Великобритания</a>
                     </li>
                     <li>
-                        <a href="">ЕС</a>
+                        <a class="country_links" href="{% url 'eu_sanctions_list' %}">ЕС</a>
                     </li>
                     <li>
-                        <a href="">Япония</a>
+                        <a class="country_links" href="{% url 'ca_sanctions_list' %}">Канада</a>
                     </li>
                     <li>
-                        <a href="">Швейцария</a>
+                        <a class="country_links" href="{% url 'usa_sanctions_list' %}">США</a>
                     </li>
                     <li>
-                        <a href="">Канада</a>
+                        <a class="country_links" href="{% url 'ch_sanctions_list' %}">Швейцария</a>
                     </li>
                     <li>
-                        <a href="">Австралия</a>
+                        <a class="country_links" href="{% url 'jp_sanctions_list' %}">Япония</a>
                     </li>
                 </ul>
             </div>
-            <div class="RF_against_countries clearfix">
-                <ul>Ответные ограничения со стороны РФ и РБ:
-                    <li>РФ - 311</li>
-                    <li>РФ - 312</li>
-                    <li>РФ - 313</li>
+            <div class="RU_against_countries clearfix">
+                <ul class="RU_BY_restrictions_list">
+                    <p>
+                        Ответные ограничения со стороны РФ и РБ:
+                    </p>
+                    <li>
+                        <a class="country_links" href="{% url 'ru_311_sanctions_list' %}">
+                            РФ №311 - запрещенные для экспорта из РФ товары
+                        </a>
+                    </li>
+                    <li>
+                        <a class="country_links" href="{% url 'ru_312_sanctions_list' %}">
+                            РФ №312 - разрешительный порядок экспорта товаров из РФ
+                        </a>
+                    </li>
+                    <li>
+                        <a class="country_links" href="{% url 'ru_313_sanctions_list' %}">
+                            РФ №313 - запрет на экспорт (список стран) + товары
+                        </a>
+                    </li>
+                    <li>
+                        <a class="country_links" href="{% url 'by_147_sanctions_list' %}">
+                            РБ №147 - запрещенные для экспорта из РБ товары
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

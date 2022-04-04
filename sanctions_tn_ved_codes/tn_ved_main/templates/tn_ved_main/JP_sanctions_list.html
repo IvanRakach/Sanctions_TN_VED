@@ -1,0 +1,12 @@
+{% extends 'tn_ved_main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main_content %}
+    <h1>jp</h1>
+    {% for i in jp_sanctions_query %}
+        <p>{{ i.sanctions_tn_ved_code }}, {{i.sanctions_tn_ved_code_description_rus }},
+            {{ i.country_code_2_dig_1side }}</p>
+    {% endfor %}
+{% endblock %}
