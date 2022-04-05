@@ -4,9 +4,35 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block main_content %}
-    <h1>uk</h1>
-    {% for i in uk_sanctions_query %}
-        <p>{{ i.sanctions_tn_ved_code }}, {{i.sanctions_tn_ved_code_description_rus }},
-            {{ i.country_code_2_dig_1side }}</p>
-    {% endfor %}
+
+
+<div class="wrapper_index">
+    <h3 style="text-align: center">Перечень санкционных кодов введенных Великобританией <br>
+        в отношении РФ и РБ</h3>
+
+    <table class="table_sanctions">
+
+        <tr class="table_header">
+            <td>Санкционный <br> код ТН ВЭД</td>
+            <td>Описание кода на англ.</td>
+            <td>Описание кода на рус.</td>
+            <td>Буквенный код страны, <br> которая ввела санкции</td>
+            <td>Буквенный код страны <br> в отношении которой ввели санкции</td>
+        </tr>
+
+        {% for i in uk_sanctions_query %}
+            <tr>
+                <td class="outer">{{ i.sanctions_tn_ved_code }}</td>
+                <td class="outer">{{ i.sanctions_tn_ved_code_description_eng }}</td>
+                <td class="outer">{{ i.sanctions_tn_ved_code_description_rus }}</td>
+                <td style="text-align: center" class="outer">{{ i.country_code_2_dig_1side }}</td>
+                <td style="text-align: center" class="outer">{{ i.country_code_2_dig_2side }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+
 {% endblock %}

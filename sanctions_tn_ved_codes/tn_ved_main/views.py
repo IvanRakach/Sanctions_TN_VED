@@ -5,6 +5,38 @@ from django.shortcuts import render
 # Create your views here.
 from .models import *
 
+# карта
+# from django.shortcuts import render, redirect  # , render_to_response
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.template.context import RequestContext
+import pandas as pd
+import folium
+# import geopandas
+
+# url = 'https://en.wikipedia.org/wiki/List_of_countries_by_meat_consumption'
+# tables = pd.read_html(url)
+# table = tables[0]
+
+# pd.set_option('display.max_columns', 10)
+# pd.set_option('display.width', 1000)
+# pd.set_option('display.max_rows', 200)
+
+# def folium_map(request):
+#     coords = [(40.7831, -73.9712), (40.6782, -73.9412), (40.7282, -73.7949)]
+#     map = folium.Map(location=[40.7118, -74.0131], zoom_start=12)
+#     for coord in coords:
+#         folium.Marker(location=[coord[0], coord[1]]).add_to(map)
+#     context = {'map': map}
+#     return render(request, 'tn_ved_main/template.html', context)
+
+
+
+
+
+
+
+# конец карты
 
 def index(request):
     param_for_render = {

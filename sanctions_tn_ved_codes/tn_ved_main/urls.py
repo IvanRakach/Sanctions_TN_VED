@@ -20,4 +20,5 @@ urlpatterns = [
     path('ru_312_sanctions_list/', views.show_ru_312_sanctions_list, name='ru_312_sanctions_list'),
     path('ru_313_sanctions_list/', views.show_ru_313_sanctions_list, name='ru_313_sanctions_list'),
     path('by_147_sanctions_list/', views.show_by_147_sanctions_list, name='by_147_sanctions_list'),
+    path('template/', views.folium_map, name='template'),
 ]
