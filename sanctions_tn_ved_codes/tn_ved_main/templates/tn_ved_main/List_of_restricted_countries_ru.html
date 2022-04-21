@@ -1,0 +1,35 @@
+{% extends 'tn_ved_main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main_content %}
+
+    <div class="wrapper_index">
+
+        <h3 style="text-align: center">Перечень стран, в которые запрещена отправка товаров с территории РФ</h3>
+
+        <table class="table_sanctions">
+
+            <tr class="table_header">
+                <td>Наименование <br>страны</td>
+                <td>Alpha-2 ISO 3166-1</td>
+                <td>Государство-член ЕС</td>
+                <td>Тип ограничения</td>
+                <td>Наименование документа</td>
+            </tr>
+
+            {% for i in list_of_restricted_countries_ru %}
+                <tr>
+                    <td class="outer">{{ i.sanction_country_rus }}</td>
+                    <td class="outer">{{ i.sanction_country_iso_alpha_2 }}</td>
+                    <td class="outer">{{ i.eu_member_country }}</td>
+                    <td style="text-align: center" class="outer">{{ i.type_of_restrictions }}</td>
+                    <td style="text-align: center" class="outer">{{ i.doc_name }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+{% endblock %}

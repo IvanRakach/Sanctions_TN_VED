@@ -37,10 +37,12 @@
                                     </strong>
                                 </span>
                                 <input type="text" class="form-control"
-                                       style="width: 55%" name="q"
-                                       placeholder="Введите код ТН ВЭД или его описание"> <!-- form-control -->
+                                       name="q"
+                                       placeholder="Введите интересующий код или его описание..."> <!-- form-control -->
                             </label>
-                            <button type="submit" class="reg_btn">Проверка</button>
+                            <button type="submit" class="srch_btn">
+                                <strong>Проверка</strong>
+                            </button>
                         </div>
                     </fieldset>
                 </form>
@@ -95,7 +97,10 @@
                     </li>
                     <li>
                         <a class="country_links" href="{% url 'ru_313_sanctions_list' %}">
-                            РФ №313 - запрет на экспорт (список стран) + товары
+                            РФ №313 - запрещенные для экспорта из РФ товары
+                        </a>
+                        <a class="country_links" href="{% url 'list_of_restricted_countries_ru' %}">
+                            <strong>в следующие страны (Приложение 1)</strong>
                         </a>
                     </li>
                     <li>

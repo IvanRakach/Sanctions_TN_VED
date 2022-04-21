@@ -7,7 +7,6 @@ urlpatterns = [
     path('search_results/', SearchResultsView.as_view(), name='search_results'),
     # path('search_results/', views.show_search_results, name='search_results'),
 
-    # список стран
     path('usa_sanctions_list/', views.show_usa_sanctions_list, name='usa_sanctions_list'),
     path('uk_sanctions_list/', views.show_uk_sanctions_list, name='uk_sanctions_list'),
     path('eu_sanctions_list/', views.show_eu_sanctions_list, name='eu_sanctions_list'),
@@ -19,6 +18,8 @@ urlpatterns = [
     path('ru_311_sanctions_list/', views.show_ru_311_sanctions_list, name='ru_311_sanctions_list'),
     path('ru_312_sanctions_list/', views.show_ru_312_sanctions_list, name='ru_312_sanctions_list'),
     path('ru_313_sanctions_list/', views.show_ru_313_sanctions_list, name='ru_313_sanctions_list'),
+    path('list_of_restricted_countries_ru/', views.show_list_of_restricted_countries_ru,
+         name='list_of_restricted_countries_ru'),
     path('by_147_sanctions_list/', views.show_by_147_sanctions_list, name='by_147_sanctions_list'),
-    path('template/', views.folium_map, name='template'),
+    # path('template/', views.folium_map, name='template'),
 ]

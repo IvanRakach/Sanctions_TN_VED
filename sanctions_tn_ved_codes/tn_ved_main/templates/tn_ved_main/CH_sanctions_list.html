@@ -12,11 +12,14 @@
     <table class="table_sanctions">
 
         <tr class="table_header">
-            <td>Санкционный <br> код ТН ВЭД</td>
-            <td>Описание кода на англ.</td>
+            <td>Санкционный <br>код</td>
+            <td>Описание кода на ин-м</td>
             <td>Описание кода на рус.</td>
-            <td>Буквенный код страны, <br> которая ввела санкции</td>
-            <td>Буквенный код страны <br> в отношении которой ввели санкции</td>
+            <td>Сторона отправления</td>
+            <td>Сторона назначения</td>
+            <td>Страна-инициатор санкций</td>
+            <td>Экспорт / <br>Импорт</td>
+            <td>Примечание</td>
         </tr>
 
         {% for i in ch_sanctions_query %}
@@ -26,6 +29,9 @@
                 <td class="outer">{{ i.sanctions_tn_ved_code_description_rus }}</td>
                 <td style="text-align: center" class="outer">{{ i.country_code_2_dig_1side }}</td>
                 <td style="text-align: center" class="outer">{{ i.country_code_2_dig_2side }}</td>
+                <td style="text-align: center" class="outer">{{ i.sanctions_initiator_country_code_2_dig }}</td>
+                <td style="text-align: center" class="outer">{{ i.export_import_ru }}</td>
+                <td style="text-align: center" class="outer">{{ i.note }}</td>
             </tr>
         {% endfor %}
 

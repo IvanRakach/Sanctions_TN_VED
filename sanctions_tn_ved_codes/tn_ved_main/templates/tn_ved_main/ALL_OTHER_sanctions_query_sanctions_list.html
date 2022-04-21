@@ -7,30 +7,38 @@
 
 
 <div class="wrapper_index">
-    <h3 style="text-align: center">Перечень санкционных кодов введенных в отношении РФ и РБ</h3>
+    <div class="container">
 
-    <table class="table_sanctions">
+        <h3 style="text-align: center">Перечень санкционных кодов введенных в отношении РФ и РБ</h3>
 
-        <tr class="table_header">
-            <td>Санкционный <br> код ТН ВЭД</td>
-            <td>Описание кода на англ.</td>
-            <td>Описание кода на рус.</td>
-            <td>Буквенный код страны, <br> которая ввела санкции</td>
-            <td>Буквенный код страны <br> в отношении которой ввели санкции</td>
-        </tr>
+        <table class="table_sanctions">
 
-        {% for i in all_other_sanctions_query %}
-            <tr>
-                <td class="outer">{{ i.sanctions_tn_ved_code }}</td>
-                <td class="outer">{{ i.sanctions_tn_ved_code_description_eng }}</td>
-                <td class="outer">{{ i.sanctions_tn_ved_code_description_rus }}</td>
-                <td style="text-align: center" class="outer">{{ i.country_code_2_dig_1side }}</td>
-                <td style="text-align: center" class="outer">{{ i.country_code_2_dig_2side }}</td>
+            <tr class="table_header">
+                <td>Санкционный <br>код</td>
+                <td>Описание кода на ин-м</td>
+                <td>Описание кода на рус.</td>
+                <td>Сторона отправления</td>
+                <td>Сторона назначения</td>
+                <td>Страна-инициатор санкций</td>
+                <td>Экспорт / <br>Импорт</td>
+                <td>Примечание</td>
             </tr>
-        {% endfor %}
 
-    </table>
+            {% for i in all_other_sanctions_query %}
+                <tr>
+                    <td class="outer">{{ i.sanctions_tn_ved_code }}</td>
+                    <td class="outer">{{ i.sanctions_tn_ved_code_description_eng }}</td>
+                    <td class="outer">{{ i.sanctions_tn_ved_code_description_rus }}</td>
+                    <td style="text-align: center" class="outer">{{ i.country_code_2_dig_1side }}</td>
+                    <td style="text-align: center" class="outer">{{ i.country_code_2_dig_2side }}</td>
+                    <td style="text-align: center" class="outer">{{ i.sanctions_initiator_country_code_2_dig }}</td>
+                    <td style="text-align: center" class="outer">{{ i.export_import_ru }}</td>
+                    <td style="text-align: center" class="outer">{{ i.note }}</td>
+                </tr>
+            {% endfor %}
 
+        </table>
+    </div>
 </div>
 
 

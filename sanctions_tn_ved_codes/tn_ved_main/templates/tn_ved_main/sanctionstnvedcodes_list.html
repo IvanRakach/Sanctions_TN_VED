@@ -1,38 +1,85 @@
 {% extends 'tn_ved_main/layout.html' %}
 {% load static %}
 
+
 {% block title %}{{ title }}{% endblock %}
 
 {% block main_content %}
 
+    <div class="wrapper_index">
 
-<div class="wrapper_index">
+        {% if query_sets_1|length > 0 %}
 
-    {% if object_list|length > 0 %}
-        <h5>Количество найденных кодов ТН ВЭД под санкциями: {{ object_list|length }}</h5>
+            {% if "AU" or "CA" or "CH" or "EU" or "JP" or "US" or "GB" in query_sets_1 %}
 
-        <table class="table_sanctions">
-            <tr class="table_header">
-                <td>Санкционный <br> код ТН ВЭД</td>
-                <td>Описание кода на англ.</td>
-                <td>Описание кода на рус.</td>
-                <td>Буквенный код страны, <br> которая ввела санкции</td>
-                <td>Буквенный код страны <br> против которой ввели санкции</td>
-            </tr>
-            {% for i in object_list %}
-                <tr>
-                    <td class="outer">{{ i.sanctions_tn_ved_code }}</td>
-                    <td class="outer">{{ i.sanctions_tn_ved_code_description_eng }}</td>
-                    <td class="outer">{{ i.sanctions_tn_ved_code_description_rus }}</td>
-                    <td style="text-align: center" class="outer">{{ i.country_code_2_dig_1side }}</td>
-                    <td style="text-align: center" class="outer">{{ i.country_code_2_dig_2side }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    {% else %}
-        <h4>Указанный код ТН ВЭД или товар не найден</h4>
-    {% endif %}
-</div>
+                <p class="search_comments">Результаты поиска: {{ query_sets_1|length }}</p>
+
+                <table class="table_sanctions">
+                    <caption>Санкции введенные коллективным Западом</caption>
+                    <tr class="table_header">
+                        <td>Санкционный <br>код</td>
+                        <td>Описание кода <br> на ин-м</td>
+                        <td>Описание кода <br> на рус.</td>
+                        <td>Сторона отправления</td>
+                        <td>Сторона назначения</td>
+                        <td>Страна-инициатор санкций</td>
+                        <td>Экспорт / <br>Импорт</td>
+                        <td>Примечание</td>
+                    </tr>
+                    {% for i in query_sets_1 %} <!-- object_list -->
+                        <tr>
+                            <td class="outer">{{ i.sanctions_tn_ved_code }}</td>
+                            <td class="outer">{{ i.sanctions_tn_ved_code_description_eng }}</td>
+                            <td class="outer">{{ i.sanctions_tn_ved_code_description_rus }}</td>
+                            <td style="text-align: center" class="outer">{{ i.country_code_2_dig_1side }}</td>
+                            <td style="text-align: center" class="outer">{{ i.country_code_2_dig_2side }}</td>
+                            <td style="text-align: center" class="outer">{{ i.sanctions_initiator_country_code_2_dig }}</td>
+                            <td style="text-align: center" class="outer">{{ i.export_import_ru }}</td>
+                            <td style="text-align: center" class="outer">{{ i.note }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            {% endif %}
+
+        {% else %}
+                <p class="search_comments">Указанный CN код не находится под санкциями
+                    стран коллективного Запада</p>
+        {% endif %}
+
+        {% if query_sets_2|length > 0 %}
+            {% if "RU" or "BY" in query_sets_2 %}
+                <p class="search_comments">Результаты поиска: {{ query_sets_2|length }}</p> <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                <table class="table_sanctions">
+                    <caption>Ответные санкции со стороны РБ и РФ</caption>
+                    <tr class="table_header">
+                        <td>Санкционный <br>код</td>
+                        <td>Описание кода на рус.</td>
+                        <td>Вид ограничений</td>
+                        <td>Наименование документа</td>
+                        <td>Alpha-2 ISO 3166-1</td>
+                        <td>Примечание</td>
+                    </tr>
+                    {% for i in query_sets_2 %} <!-- object_list -->
+                        <tr>
+                            <td class="outer">{{ i.sanctions_tn_ved_code }}</td>
+                            <td class="outer">{{ i.sanctions_tn_ved_code_description }}</td>
+                            <td class="outer">{{ i.type_of_restrictions }}</td>
+                            <td style="text-align: center" class="outer">{{ i.doc_name }}</td>
+                            <td style="text-align: center" class="outer">{{ i.sanction_country_iso_alpha_2 }}</td>
+                            <td style="text-align: center" class="outer">{{ i.note }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            {% endif %}
+
+        {% else %}
+            <p class="search_comments">Указанный ТН ВЭД код не находится под санкциями со стороны РБ и РФ</p>
+        {% endif %}
+
+    </div>
 
 
 {% endblock %}
