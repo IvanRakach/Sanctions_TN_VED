@@ -8,8 +8,8 @@
     <div class="wrapper_index">
 
         <div class="text">
-            <h4>Перечень подсанкционных товаров, по которым введены ограничения
-                недружественными странами <br> (с указанием кодов ТН ВЭД)</h4>
+
+<!--            <h4>Перечень подсанкционных товаров, по которым введены ограничения</h4>-->
 
             <p>Списки подсанкционных товаров подготовлены Центром экспертизы ВТО по правовым актам
                 правительств ЕС, США, Великобритании, Сингапура, Швейцарии, Канады и Австралии и
@@ -20,11 +20,7 @@
 
         <div class="1st_block">
             <div class="tnved_enter_code">
-<!--                <form action="{% url 'search_results' %}" method="get">-->
-<!--                    {% csrf_token %}-->
-<!--                  <input name="q" type="text" placeholder="Введите код">-->
-<!--                </form>-->
-                <!-- !!!!!!!!!!!! -->
+
                 <form method="get" action="{% url 'search_results' %}"
                       enctype="multipart/form-data">
                     {% csrf_token %}
@@ -38,7 +34,7 @@
                                 </span>
                                 <input type="text" class="form-control"
                                        name="q"
-                                       placeholder="Введите интересующий код или его описание..."> <!-- form-control -->
+                                       placeholder="Введите интересующий код или его описание...">
                             </label>
                             <button type="submit" class="srch_btn">
                                 <strong>Проверка</strong>

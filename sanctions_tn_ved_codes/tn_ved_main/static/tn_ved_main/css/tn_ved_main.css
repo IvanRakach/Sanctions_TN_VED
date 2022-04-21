@@ -54,7 +54,24 @@ footer{
     width: 350px;
     height: 45px;
 }
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1439px){
+    .header_block_1{
+        margin: 0 auto;
+        margin-left: 5%;
+        width: 43%;
+        height: 70px;
+        display: block;
+        float: left;
+        /*background-color: lightblue;*/
+    }
+    .header_block_1_img_2{
+        margin-top: 40px;
+        padding-left: 20px;
+        width: 300px;
+        height: 45px;
+    }
+}
+@media screen and (max-width: 1190px){
     .header_block_1{
         margin: 0 auto;
         margin-left: 5%;
@@ -82,7 +99,21 @@ footer{
     color: #646464;
     /*background-color: red;*/
 }
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1439px){
+    .header_block_2{
+        margin: 0 auto;
+        width: 30%;/*37.5%;*/
+        height: auto;
+        display: block;
+        float: left;
+        margin-top: 50px;
+        padding-left: 15px;
+        color: #646464;
+        font-size: 14px;
+        /*background-color: red;*/
+    }
+}
+@media screen and (max-width: 1190px){
     .header_block_2{
         margin: 0 auto;
         width: 25%;/*37.5%;*/
@@ -110,12 +141,25 @@ footer{
     /*font-weight: bold;*/
     width: 80%;
     height: 30px;
-    padding-top: 15px;
+    padding-top: 35px;
     padding-left: 5%;
     /*margin: 0 auto;*/
     text-align: center;
 }
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1439px){
+    .header_block_3 div{
+        font-size: 18px;
+        /*font-weight: bold;*/
+        width: 80%;
+        height: 20px;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 30px;
+        text-align: center;
+        /*background-color: lightgreen;*/
+    }
+}
+@media screen and (max-width: 1190px){
     .header_block_3 div{
         font-size: 18px;
         /*font-weight: bold;*/
@@ -128,6 +172,7 @@ footer{
         /*background-color: lightgreen;*/
     }
 }
+
 .hr_header_line{
     width: 50%;
     height: 2px;
@@ -157,7 +202,7 @@ li:before{
 }
 .country_links{
     text-decoration: none;
-    color: #646464;
+    color: black;
 }
 .country_links:hover{
     color: red;
@@ -172,6 +217,10 @@ li:before{
     width: 90%;
     font-size: 14px;
     /*text-align: justify;*/
+}
+.text p{
+    font-size: 16px;
+    text-align: center;
 }
 .text h4{
     text-align: center;
@@ -200,17 +249,16 @@ li:before{
     margin-left: -6.5%;
 }
 .RU_BY_restrictions_list p{
-    margin-bottom: 8.5%;
+    margin-bottom: 9.5%;
 
 }
 
 .RU_BY_restrictions_list li{
-    padding-top: 3px;
     margin-left: 7%;
 }
 
 
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1439px){
     .2nd_block{
         margin: 0 auto;
         font-size: 14px;
@@ -231,9 +279,23 @@ li:before{
         /*padding-top: 4.5%;*/
         margin-bottom: 5%;
     }
+    .RU_BY_restrictions_list li{
+        padding-top: 15.5px;
+        margin-left: 7%;
+    }
     .country_links{
         text-decoration: none;
         font-size: 14px;
+    }
+}
+@media screen and (max-width: 1190px){
+    .RU_BY_restrictions_list p{
+        /*padding-top: 4.5%;*/
+        margin-bottom: 3%;
+    }
+    .RU_BY_restrictions_list li{
+        padding-top: 7px;
+        margin-left: 7%;
     }
 }
 fieldset{
@@ -267,7 +329,7 @@ fieldset{
       color: rgba(64, 64, 64, 0.7);
       font-size: 12px;
     }
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1439px){
     .form-control{
         width: 50%;
     }
@@ -276,7 +338,7 @@ fieldset{
       font-size: 11.5px;
     }
     .tnved_enter_code_form_inputs{
-        padding-left: 3%;
+        padding-left: 8%;
         font-size: 14px;
     }
     .srch_btn{
