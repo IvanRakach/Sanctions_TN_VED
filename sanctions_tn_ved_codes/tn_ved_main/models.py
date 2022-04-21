@@ -1,12 +1,10 @@
-# from audioop import reverse
 from django.db import models
 from django.db.models import Q
-# from django.urls import reverse
 
 
 class SanctionsTnvedCodesQuerySet(models.QuerySet):
     def search(self, query=None):
-        qs = self  # .get_queryset()
+        qs = self
         if query is not None:
             or_lookup = (Q(sanctions_tn_ved_code__icontains=query) |
                          Q(sanctions_tn_ved_code_description_eng__icontains=query) |
@@ -61,7 +59,7 @@ class TnVedCodes(models.Model):
 
 class SanctionsTnvedCodesFromRU311312313BY147QuerySet(models.QuerySet):
     def search(self, query=None):
-        qs = self  # .get_queryset()
+        qs = self
         if query is not None:
             or_lookup = (Q(sanctions_tn_ved_code__icontains=query) |
                          Q(sanctions_tn_ved_code_description__icontains=query) |
@@ -85,7 +83,6 @@ class SanctionsTnvedCodesFromRU311312313BY147(models.Model):
     sanctions_tn_ved_code_description = models.TextField('Описание кода', )
     type_of_restrictions = models.TextField('Вид ограничений', )
     doc_name = models.TextField('Наименование документа', )
-    # doc_number = models.TextField('Номер документа', )
     doc_number = models.IntegerField('Номер документа')
     sanction_country_iso_alpha_2 = models.CharField('Alpha-2 ISO 3166-1', max_length=2, db_index=True)
     sanction_country_iso_alpha_3 = models.CharField('Alpha-3 ISO 3166-1', max_length=3, db_index=True)

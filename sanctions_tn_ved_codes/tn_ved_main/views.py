@@ -1,40 +1,9 @@
-from itertools import chain
-
-# from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.views import View
-# from django.views.generic import CreateView, ListView, FormView, TemplateView
-from django.db.models import Q
+# from django.db.models import Q
 from django.shortcuts import render
 
 # Create your views here.
 from .models import *
-
-# карта
-# from django.shortcuts import render, redirect  # , render_to_response
-# from django.http import HttpResponse
-# from django.template.loader import get_template
-# from django.template.context import RequestContext
-# import pandas as pd
-# import folium
-# import geopandas
-
-# url = 'https://en.wikipedia.org/wiki/List_of_countries_by_meat_consumption'
-# tables = pd.read_html(url)
-# table = tables[0]
-
-# pd.set_option('display.max_columns', 10)
-# pd.set_option('display.width', 1000)
-# pd.set_option('display.max_rows', 200)
-
-# def folium_map(request):
-#     coords = [(40.7831, -73.9712), (40.6782, -73.9412), (40.7282, -73.7949)]
-#     map = folium.Map(location=[40.7118, -74.0131], zoom_start=12)
-#     for coord in coords:
-#         folium.Marker(location=[coord[0], coord[1]]).add_to(map)
-#     context = {'map': map}
-#     return render(request, 'tn_ved_main/template.html', context)
-
-# конец карты
 
 
 def index(request):
@@ -42,21 +11,6 @@ def index(request):
         'title': 'Проверка кодов ТН ВЭД',
     }
     return render(request, 'tn_ved_main/index.html', context=param_for_render)
-
-# class SearchResultsView(ListView):
-#     model = SanctionsTnvedCodes  # !!!!!!!!!!!!!!!!!!!!!!
-#     template_name = 'sanctionstnvedcodes_list.html'  # tn_ved_main/sanctionstnvedcodes_list.html
-#
-#     def get_queryset(self):  # рабочий вариант
-#         query = self.request.GET.get('q')
-#         return SanctionsTnvedCodes.objects.filter(
-#             # для определения рус символов их нужно преобразовать в единый формат
-#             Q(sanctions_tn_ved_code__icontains=query) |
-#             Q(sanctions_tn_ved_code_description_rus__icontains=query) |
-#             Q(sanctions_tn_ved_code_description_eng__icontains=query) |
-#             Q(sanctions_tn_ved_code_description_rus__contains=query)
-#         )
-###########################################################################################
 
 
 class SearchResultsView(View):
@@ -69,13 +23,6 @@ class SearchResultsView(View):
         if q is not None:
             query_sets_1 = SanctionsTnvedCodes.objects.search(query=q)
             query_sets_2 = SanctionsTnvedCodesFromRU311312313BY147.objects.search(query=q)
-
-            # query_sets = [
-            #     SanctionsTnvedCodes.objects.search(query=q),
-            #     SanctionsTnvedCodesFromRU311312313BY147.objects.search(query=q)
-            # ]
-            # final_query = list(chain(*query_sets))
-
 
             param_for_render = {
                 # 'final_query': final_query,
@@ -212,6 +159,7 @@ def show_ru_313_sanctions_list(request):
         'title': 'Список санкционных кодов РФ (Постановление №313)',
     }
     return render(request, 'tn_ved_main/RU_313_sanctions_list.html', context=param_for_render)
+
 
 def show_list_of_restricted_countries_ru(request):
     list_of_restricted_countries_ru = SanctionCountriesListFromRU313.objects.all()

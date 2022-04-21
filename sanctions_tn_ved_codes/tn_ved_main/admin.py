@@ -1,13 +1,8 @@
 from django.contrib import admin
-
-# Register your models here.
-
 from .models import *
-# from .forms import *
 
 
 class SanctionsTnvedCodesAdmin(admin.ModelAdmin):
-    # список полей, которые мы хотим видеть в нашей админ панели
     list_display = (
         'id',
         'sanctions_tn_ved_code',
@@ -20,9 +15,7 @@ class SanctionsTnvedCodesAdmin(admin.ModelAdmin):
         'export_import_ru',
         'note',
     )
-    # те поля, на которые мы можем кликнуть и перейти
     list_display_links = ('id', 'sanctions_tn_ved_code', )
-    # те поля, по которым мы можем производить поиск информации
     search_fields = (
         'sanctions_tn_ved_code',
         'sanctions_tn_ved_code_description_eng',
@@ -40,11 +33,8 @@ admin.site.register(SanctionsTnvedCodes, SanctionsTnvedCodesAdmin)
 
 
 class TnVedCodesAdmin(admin.ModelAdmin):
-    # список полей, которые мы хотим видеть в нашей админ панели
     list_display = ('id', 'tn_ved_code', )
-    # те поля, на которые мы можем кликнуть и перейти
     list_display_links = ('id', 'tn_ved_code',)
-    # те поля, по которым мы можем производить поиск информации
     search_fields = ('tn_ved_code', )
 
 
@@ -52,7 +42,6 @@ admin.site.register(TnVedCodes, TnVedCodesAdmin)
 
 
 class SanctionsTnvedCodesFromRU311312313BY147Admin(admin.ModelAdmin):
-    # список полей, которые мы хотим видеть в нашей админ панели
     list_display = (
         'id',
         'sanctions_tn_ved_code',
@@ -64,9 +53,7 @@ class SanctionsTnvedCodesFromRU311312313BY147Admin(admin.ModelAdmin):
         'sanction_country_iso_alpha_3',
         'note',
     )
-    # те поля, на которые мы можем кликнуть и перейти
     list_display_links = ('id', 'sanctions_tn_ved_code', )
-    # те поля, по которым мы можем производить поиск информации
     search_fields = (
         'sanctions_tn_ved_code',
         'sanctions_tn_ved_code_description',
@@ -83,7 +70,6 @@ admin.site.register(SanctionsTnvedCodesFromRU311312313BY147, SanctionsTnvedCodes
 
 
 class SanctionCountriesListFromRU313Admin(admin.ModelAdmin):
-    # список полей, которые мы хотим видеть в нашей админ панели
     list_display = (
         'id',
         'sanction_country_rus',
@@ -95,9 +81,7 @@ class SanctionCountriesListFromRU313Admin(admin.ModelAdmin):
         'doc_number',
         'note',
     )
-    # те поля, на которые мы можем кликнуть и перейти
     list_display_links = ('id', 'sanction_country_rus', )
-    # те поля, по которым мы можем производить поиск информации
     search_fields = (
         'sanction_country_rus',
         'sanction_country_iso_alpha_2',
