@@ -4,7 +4,7 @@ html{
 }
 header{
     width: 100%;
-    height: 120px;
+    height: 100px;
     margin: 0 auto;
     margin-top: 2%;
     background-color: #fff;
@@ -12,7 +12,7 @@ header{
 body{
     margin: 0 auto;
     width: 70%;
-    height: 250px;
+    /*height: 150px;*/
     background-color: #fff;
 }
 
@@ -54,6 +54,58 @@ footer{
     width: 350px;
     height: 45px;
 }
+@media screen and (max-width: 2560px){
+    .header_block_0{
+        margin: 0 auto;
+        margin-left: 5%;
+        margin-top: 2%;
+        width: 125px;
+        height: 150px;
+        display: block;
+        float: left;
+        /*background-color: lightyellow;*/
+    }
+    .header_block_1{
+        margin: 0 auto;
+        margin-left: 24%;
+        width: 30%;
+        height: 70px;
+        display: block;
+        float: left;
+        /*background-color: lightblue;*/
+    }
+    .header_block_1_img_2{
+        margin-top: 40px;
+        padding-left: 25px;
+        width: 300px;
+        height: 45px;
+    }
+    .header_block_2{
+        margin: 0 auto;
+        width: 30%;/*37.5%;*/
+        height: auto;
+        display: block;
+        float: left;
+        margin-top: 50px;
+        padding-top: 20px;
+        /*padding-left: 35px;*/
+        color: #646464;
+        font-size: 14px;
+        /*background-color: red;*/
+    }
+    .header_block_2 div{
+        margin-top: 2.5%;
+        padding-left: 35%;
+    }
+    .hr_header_line{
+        padding-right: 35%;
+        width: 50%;
+        height: 2px;
+        margin: 0 auto;
+        border: 0;
+        background: linear-gradient(to right, rgba(0,0,64,0)0%, rgba(0,0,64,0.3)50%, rgba(0,0,64,0)100%)
+    }
+}
 @media screen and (max-width: 1439px){
     .header_block_1{
         margin: 0 auto;
@@ -75,7 +127,7 @@ footer{
     .header_block_1{
         margin: 0 auto;
         margin-left: 5%;
-        width: 39%;
+        width: 35%;
         height: 70px;
         display: block;
         float: left;
@@ -160,12 +212,18 @@ footer{
     }
 }
 @media screen and (max-width: 1190px){
+    .header_block_1_img_2{
+        margin-top: 68px;
+        padding-left: 20px;
+        width: 250px;
+        height: 45px;
+    }
     .header_block_3 div{
         font-size: 18px;
         /*font-weight: bold;*/
         width: 100%;
         height: 30px;
-        margin-top: -40px;
+        margin-top: -50px;
         padding-left: 15%;
         /*margin: 0 auto;*/
         text-align: center;
@@ -183,6 +241,7 @@ footer{
 
 main{
     height: auto;
+    margin-top: -3.2%;
     background-color: #fff;
 }
 .wrapper_index{
@@ -326,9 +385,27 @@ fieldset{
     transition: 0.5s;
 }
 ::placeholder {
-      color: rgba(64, 64, 64, 0.7);
-      font-size: 12px;
+    color: rgba(64, 64, 64, 0.7);
+    font-size: 12px;
+}
+@media screen and (max-width: 2560px){
+    .form-control{
+        width: 50%;
     }
+    ::placeholder {
+      color: rgba(64, 64, 64, 0.7);
+      font-size: 11.5px;
+    }
+    .tnved_enter_code_form_inputs{
+        padding-left: 12%;
+        font-size: 14px;
+    }
+    .srch_btn{
+        width: 85px;
+        height: 21px;
+        margin-left: 1%;
+    }
+}
 @media screen and (max-width: 1439px){
     .form-control{
         width: 50%;
@@ -339,6 +416,24 @@ fieldset{
     }
     .tnved_enter_code_form_inputs{
         padding-left: 8%;
+        font-size: 14px;
+    }
+    .srch_btn{
+        width: 85px;
+        height: 21px;
+        margin-left: 1%;
+    }
+}
+@media screen and (max-width: 1190px){
+    .form-control{
+        width: 50%;
+    }
+    ::placeholder {
+      color: rgba(64, 64, 64, 0.7);
+      font-size: 11.5px;
+    }
+    .tnved_enter_code_form_inputs{
+        padding-left: 4.5%;
         font-size: 14px;
     }
     .srch_btn{
