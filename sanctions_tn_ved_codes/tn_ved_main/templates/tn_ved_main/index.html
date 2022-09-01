@@ -7,22 +7,19 @@
 
     <div class="wrapper_index">
 
-        <div class="text">
-
-<!--            <h4>Перечень подсанкционных товаров, по которым введены ограничения</h4>-->
+        <div class="descr_text">
 
             <p>Списки подсанкционных товаров подготовлены Центром экспертизы ВТО по правовым актам
                 правительств ЕС, США, Великобритании, Сингапура, Швейцарии, Канады и Австралии и
-                обновляются по мере поступления и изменения информации.</p>
+                обновляются по мере поступления и изменения информации.
+            </p>
 
-<!--            <p>Перечни с соответствующими кодами ТН ВЭД приведены по состоянию на 21.03.2022 г.</p>-->
         </div>
 
         <div class="1st_block">
             <div class="tnved_enter_code">
 
-                <form method="get" action="{% url 'search_results' %}"
-                      enctype="multipart/form-data">
+                <form method="get" action="{% url 'search_results' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     <fieldset>
                         <div class="search_block">
@@ -37,7 +34,7 @@
                                        placeholder="Введите интересующий код или его описание...">
                             </label>
                             <button type="submit" class="srch_btn">
-                                <strong>Проверка</strong>
+                                <strong>Поиск</strong>
                             </button>
                         </div>
                     </fieldset>
@@ -50,28 +47,28 @@
                     <p>
                         Список стран (и их ограничения), которые ввели санкции в отношении РФ и РБ:
                     </p>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'all_other_sanctions_list' %}">Все страны</a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'au_sanctions_list' %}">Австралия</a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'uk_sanctions_list' %}">Великобритания</a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'eu_sanctions_list' %}">ЕС</a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'ca_sanctions_list' %}">Канада</a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'usa_sanctions_list' %}">США</a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'ch_sanctions_list' %}">Швейцария</a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'jp_sanctions_list' %}">Япония</a>
                     </li>
                 </ul>
@@ -81,25 +78,26 @@
                     <p>
                         Ответные ограничения со стороны РФ и РБ:
                     </p>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'ru_311_sanctions_list' %}">
                             РФ №311 - запрещенные для экспорта из РФ товары
                         </a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'ru_312_sanctions_list' %}">
                             РФ №312 - разрешительный порядок экспорта товаров из РФ
                         </a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'ru_313_sanctions_list' %}">
                             РФ №313 - запрещенные для экспорта из РФ товары
                         </a>
                         <a class="country_links" href="{% url 'list_of_restricted_countries_ru' %}">
+                            <br>
                             <strong>в следующие страны (Приложение 1)</strong>
                         </a>
                     </li>
-                    <li>
+                    <li class="sanctions-index-list">
                         <a class="country_links" href="{% url 'by_147_sanctions_list' %}">
                             РБ №147 - запрещенные для экспорта из РБ товары
                         </a>

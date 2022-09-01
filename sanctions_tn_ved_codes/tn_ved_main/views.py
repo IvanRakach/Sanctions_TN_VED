@@ -5,10 +5,44 @@ from django.shortcuts import render
 # Create your views here.
 from .models import *
 
+header_cities = ["Минск", "Брест", "Москва", "Санкт-Петербург", "Смоленск"]
+# header_cities = {
+#     "minsk": "Минск",
+#     "brest": "Брест",
+#     "moscow": "Москва",
+#     "spb": "Санкт-Петербург",
+#     "smolensk": "Смоленск",
+# }
+
+header_phones = {
+    "minsk": {
+        "city_name": "Минск", "city_code": "+375 17", "city_numb": "218 10 10",
+    },
+    "brest": {
+        "city_name": "Брест", "city_code": "+375 162", "city_numb": "29 13 22",
+    },
+    "moscow": {
+        "city_name": "Москва", "city_code": "+7 495", "city_numb": "108 03 66",
+    },
+    "spb": {
+        "city_name": "Санкт-Петербург", "city_code": "+7 812", "city_numb": "309 92 56",
+    },
+    "smolensk": {
+        "city_name": "Смоленск", "city_code": "+7 495", "city_numb": "108 03 66",
+    },
+}
+# "minsk": "Минск", "minsk_code": "+375 17", "minsk_numb": "218 10 10",
+# "brest": "Брест", "brest_code": "+375 162", "brest_numb": "29 13 22",
+# "moscow": "Москва", "moscow_code": "+7 495", "moscow_numb": "108 03 66",
+# "spb": "Санкт-Петербург", "spb_code": "+7 812", "spb_numb": "309 92 56",
+# "smolensk": "Смоленск", "smolensk_code": "+7 495", "smolensk_numb": "108 03 66",
+
 
 def index(request):
     param_for_render = {
         'title': 'Проверка кодов ТН ВЭД',
+        'header_cities': header_cities,
+        'header_phones': header_phones,
     }
     return render(request, 'tn_ved_main/index.html', context=param_for_render)
 

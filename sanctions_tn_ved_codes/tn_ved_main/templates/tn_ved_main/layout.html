@@ -9,41 +9,261 @@
 </head>
 <body>
 
-    <header class="clearfix">
-        <div class="wrapper_header">
-            <div class="header_block_0 clearfix">
-                <a href="{% url 'home' %}">
-                    <img class="header_block_1_img_1" src="{% static 'tn_ved_main/img/Logo_500-500.jpg' %}"
-                         alt="logo" width="125" height="125">
-                </a>
-            </div>
-            <div class="header_block_1 clearfix">
-                <a href="{% url 'home' %}" class="clearfix">
-                    <img class="header_block_1_img_2" src="{% static 'tn_ved_main/img/2.svg' %}"
-                         alt="logo">
-                </a>
-            </div>
-            <div class="header_block_2 clearfix">
-                <div>Телефон поддержки: 5205</div>
-                <!--<div>База обновлена: 00.00.0000</div>-->
-            </div>
-            <div class="header_block_3 clearfix">
-                <div>Проверка кодов ТН ВЭД и CN-кодов на санкционную составляющую</div>
+
+
+    <div class="wrapper">
+
+        <header>
+            <nav class="navbar"> <!--clearfix-->
+                <div class="wrapper_header_block_img">
+                    <a href="{% url 'home' %}">
+                        <img class="" src="{% static 'tn_ved_main/img/Logo_500-500.jpg' %}"
+                             alt="logo" width="105" height="105">
+                    </a>
+                </div>
+                <div class="wrapper_header_blocks">
+                    <div class="wrapper_header_block_1">
+                        <div class="wrapper_header_block_1_1">
+                            <img src="{% static 'tn_ved_main/img/2.svg' %}"
+                             alt="2" >
+                        </div>
+                        <div class="wrapper_header_block_1_2">
+
+                            <div class="region">
+                                <img src="{% static 'tn_ved_main/img/icon-phone.jpg' %}"
+                                     alt="2" width="20px;" height="20px;">
+
+                                <select name="city" id="city">
+                                    {% for city in header_cities %}
+                                    <option value="{{ city }}">{{ city }}</option>
+                                    {% endfor %}
+                                </select>
+
+<!--                                <span>Минск</span>-->
+                            </div>
+
+                            <div class="tel_numb">
+                                <span id="out-result"></span>
+<!--                                <a href="tel:+375 17 218 10 10" type="tel:">-->
+<!--                                    <span>-->
+<!--                                        +375 17 <span>218 10 10</span>-->
+<!--                                    </span>-->
+<!--                                </a>-->
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <hr class="hr_header">
+                    <div class="wrapper_header_block_2">
+                        <div class="header_vl_right dropdown">
+                            <a class="dropbtn" href="https://krafttrans.by/about/">О компании</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+                                    <li>
+                                        <a href="https://krafttrans.by/about/">
+                                            О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://krafttrans.by/about/certificates/">
+                                            Лицензии и сертификаты</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://krafttrans.by/about/reviews/">
+                                            Отзывы</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://krafttrans.by/about/projects/">
+                                            Проекты компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://krafttrans.by/about/politika-konfidentsialnosti-personalnykh-dannykh.php">
+                                            Политика конфиденциальности персональных данных</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://krafttrans.by/about/politika-v-otnoshenii-faylov-cookie.php">
+                                            Политика в отношении файлов cookie</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="header_vl_right dropdown">
+                            <a class="dropbtn" href="https://krafttrans.by/services/">Услуги</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+                                    <li></li>
+                                </ul>
+                                <a href="https://krafttrans.by/services/gruzoperevozki-iz-kitaya/">
+                                    Грузоперевозки из Китая</a>
+                                <a href="https://krafttrans.by/services/aviaperevozki-gruzov/">
+                                    Авиаперевозки грузов</a>
+                                <a href="https://krafttrans.by/services/avtomobilnye-gruzoperevozki/">
+                                    Автомобильные грузоперевозки</a>
+                                <a href="https://krafttrans.by/services/perevozka-sbornyh-gruzov/">
+                                    Перевозка сборных грузов</a>
+                                <a href="https://krafttrans.by/services/perevozka-nalivnykh-gruzov/">
+                                    Перевозка наливных грузов</a>
+                                <a href="https://krafttrans.by/services/proektnye-perevozki/">
+                                    Проектные перевозки</a>
+                                <a href="https://krafttrans.by/services/perevozka-nalivnykh-gruzov-vo-fleksitankakh/">
+                                    Перевозка наливных грузов во флекситанках</a>
+                                <a href="https://krafttrans.by/services/morskie-gruzoperevozki/">
+                                    Морские грузоперевозки</a>
+                                <a href="https://krafttrans.by/services/kontejnernye-perevozki/">
+                                    Контейнерные грузоперевозки</a>
+                                <a href="https://krafttrans.by/services/obyazatelnaya-markirovka-obuvi-kodami-data-matrix.php">
+                                    Маркировка обуви</a>
+                                <a href="https://krafttrans.by/services/zheleznodorozhnye-gruzoperevozki/">
+                                    Железнодорожные перевозки</a>
+                                <a href="https://krafttrans.by/services/perevozka-negabaritnyh-gruzov/">
+                                    Негабаритные грузоперевозки</a>
+                                <a href="https://krafttrans.by/services/tamozhennye-uslugi/">
+                                    Таможенное оформление</a>
+                            </div>
+                        </div>
+                        <div class="header_vl_right dropdown">
+                            <a class="dropbtn" href="https://krafttrans.by/partners/">Партнерам</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+                                    <li></li>
+                                </ul>
+                                <a href="https://krafttrans.by/partners/">
+                                    Партнерам</a>
+                                <a href="https://krafttrans.by/partners/trucks/">
+                                    Предложить транспорт</a>
+                            </div>
+                        </div>
+
+    <!--                    <div class="header_vl_right">-->
+    <!--                        <a href="https://krafttrans.by/about/">О компании&nbsp</a>-->
+    <!--                    </div>-->
+    <!--                    <div class="header_vl_right">-->
+    <!--                        <a href="https://krafttrans.by/services/">Услуги&nbsp</a>-->
+    <!--                    </div>-->
+    <!--                    <div class="header_vl_right">-->
+    <!--                        <a href="https://krafttrans.by/partners/">Партнерам&nbsp</a>-->
+    <!--                    </div>-->
+                        <div class="header_vl_right">
+                            <a href="https://krafttrans.by/about/projects/">Проекты&nbsp</a>
+                        </div>
+                        <div class="header_vl_right dropdown">
+                            <a class="dropbtn" href="https://krafttrans.by/working_at/">Карьера</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+                                    <li></li>
+                                </ul>
+                                <a href="https://krafttrans.by/working_at/personnel_policy/">
+                                    Политика в отношении персонала</a>
+                                <a href="https://krafttrans.by/working_at/vacancies/">
+                                    Вакансии</a>
+                            </div>
+                        </div>
+    <!--                    <div class="header_vl_right">-->
+    <!--                        <a href="https://krafttrans.by/working_at/">Карьера&nbsp</a>-->
+    <!--                    </div>-->
+                        <div class="header_vl_right">
+                            <a href="https://krafttrans.by/contacts/minsk/">Контакты&nbsp</a>
+                        </div>
+                        <div class="header_vl_left">
+                            <a href="{% url 'home' %}">Санкции</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="wrapper_top">
+            <div class="inner_wrapper">
+                <div class="block_name">
+                    <h1>САНКЦИИ</h1>
+                </div>
+
+                <div class="block_link">
+                    <button>
+                        <a href="https://krafttrans.by/">ЗАПРОСИТЬ СТАВКУ</a>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <hr class="hr_header_line">
+        <main>
+            {% block main_content %}
+            {% endblock %}
+        </main>
 
-    </header>
 
-    <main>
-        {% block main_content %}
-        {% endblock %}
-    </main>
+        <div class="with-pattern">
+        </div>
+        <footer class="">
 
-    <footer class="clearfix">
+            <div class="middle4-article">
+                <article>
+                    <div class="foot-text">
+                        <p class="foot-text-line">&copy; 2022 Транспортно-экспедиционная</p>
+                        <p>компания КРАФТТРАНС</p>
+                        <div class="social_network_links_block">
+                            <ul class="social_network_links">
+                                <li>
+                                    <a href="https://www.facebook.com/KRAFTTRANS" target="_blank">
+                                        <img class="social_network_links_img" src="{% static 'tn_ved_main/img/1-FB.png' %}"
+                                             alt="Facebook">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/krafttrans_com/" target="_blank">
+                                        <img class="social_network_links_img" src="{% static 'tn_ved_main/img/1-IN.png' %}"
+                                             alt="Instagram">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/krafttrans" target="_blank">
+                                        <img class="social_network_links_img" src="{% static 'tn_ved_main/img/1-LI.png' %}"
+                                             alt="LinkedIn">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://vk.com/krafttrans" target="_blank">
+                                        <img class="social_network_links_img" src="{% static 'tn_ved_main/img/1-VK.png' %}"
+                                             alt="VK">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="foot-text">
+                        <p class="foot-text-line">220114, г.Минск,</p>
+                        <p class="foot-text-line">пр-т Независимости, 169, офис 312,</p>
+                        <p class="foot-text-line">«Бизнес-Центр XXI век»</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="foot-text">
+                        <p class="footer-phone">
+                            <a href="tel:+375 17 218 10 10" type="tel:">+375 17 218 10 10</a>
+                        </p>
+                        <p class="footer-phone">
+                            <a href="tel:+375 29 608 10 75" type="tel:">+375 29 608 10 75</a>
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <div class="foot-text">
+                        <p class="footer-phone" >
+                            <a href="tel:+375 29 506 00 54" type="tel:">+375 29 506 00 54</a>
+                        </p>
+                        <p class="footer-email" >
+                            <a href="mailto:info@krafttrans.com">info@krafttrans.com</a>
+                        </p>
+                    </div>
+                </article>
+            </div>
 
-    </footer>
+        </footer>
+    </div>
 
 </body>
 </html>
