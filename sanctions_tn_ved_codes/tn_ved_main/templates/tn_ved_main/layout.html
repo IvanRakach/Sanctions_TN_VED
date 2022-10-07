@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'tn_ved_main/css/tn_ved_main.css' %}">
+<!--    <script src="jquery-3.4.1.min.js"></script>-->
+<!--    <script src="jquery.fancybox.js"></script>-->
+<!--    <link rel="stylesheet" href="jquery.fancybox.css">-->
+<!--    <link rel="stylesheet" href="jquery.fancybox.css">-->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'tn_ved_main/img/favicon-32x32.png' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
 
+    <!-- --------------------------------------------------------------------------------------------------------- -->
 
     <div class="wrapper">
 
@@ -33,22 +45,55 @@
                                 <img src="{% static 'tn_ved_main/img/icon-phone.jpg' %}"
                                      alt="2" width="20px;" height="20px;">
 
-                                <select name="city" id="city">
-                                    {% for city in header_cities %}
-                                    <option value="{{ city }}">{{ city }}</option>
-                                    {% endfor %}
-                                </select>
 
-<!--                                <span>Минск</span>-->
+                                    <a data-fancybox="hello" data-src="#hello" href="javascript:;" class="btn btn-primary" id="timework">
+                                        Минск
+                                    </a>
+                                    <div id="hello" action="" method="post" style="display: none; width: 100%; max-width: 660px;    font-size: 14px;
+                                    line-height: 1;" class="">
+                                        <h2>Контактные данные</h2>
+                                        <p>Минск: <a href="tel:+375 17 218 10 10" type="tel:" class="office_number">
+                                                        <span>
+                                                            +375 17 <span class="office_number_big">218 10 10</span>
+                                                        </span>
+                                                    </a>
+                                        </p>
+                                        <p>Брест: <a href="tel:+375 162 29 13 22" type="tel:" class="office_number">
+                                                        <span>
+                                                            +375 162 <span class="office_number_big">29 13 22</span>
+                                                        </span>
+                                                    </a>
+                                        </p>
+                                        <p>Москва: <a href="tel:+7 495 108 03 66" type="tel:" class="office_number">
+                                                        <span>
+                                                            +7 495 <span class="office_number_big">108 03 66</span>
+                                                        </span>
+                                                    </a>
+                                        </p>
+                                        <p>Санкт-Петербург: <a href="tel:+7 812 309 92 56" type="tel:" class="office_number">
+                                                                <span>
+                                                                    +7 812 <span class="office_number_big">309 92 56</span>
+                                                                </span>
+                                                            </a>
+                                        </p>
+                                        <p>Смоленск: <a href="tel:+7 495 108 03 66" type="tel:" class="office_number">
+                                                                <span>
+                                                                    +7 495 <span class="office_number_big">108 03 66</span>
+                                                                </span>
+                                                            </a>
+                                        </p>
+                                        <a href="" data-fancybox-close class="btn office_number">Назад</a>
+                                    </div>
+
                             </div>
 
                             <div class="tel_numb">
-                                <span id="out-result"></span>
-<!--                                <a href="tel:+375 17 218 10 10" type="tel:">-->
-<!--                                    <span>-->
-<!--                                        +375 17 <span>218 10 10</span>-->
-<!--                                    </span>-->
-<!--                                </a>-->
+<!--                                <span id="out-result"></span>-->
+                                <a href="tel:+375 17 218 10 10" type="tel:">
+                                    <span>
+                                        +375 17 <span>218 10 10</span>
+                                    </span>
+                                </a>
                             </div>
 
                         </div>
@@ -58,113 +103,344 @@
                     <hr class="hr_header">
                     <div class="wrapper_header_block_2">
                         <div class="header_vl_right dropdown">
-                            <a class="dropbtn" href="https://krafttrans.by/about/">О компании</a>
+                            <a class="dropbtn" href="https://krafttrans.ru/about/">О компании</a>
                             <div class="dropdown-content">
                                 <ul class="dropdown-content-list">
                                     <li>
-                                        <a href="https://krafttrans.by/about/">
-                                            О компании</a>
+                                        <a href="https://krafttrans.ru/about/mission/">
+                                            Миссия</a>
                                     </li>
                                     <li>
-                                        <a href="https://krafttrans.by/about/certificates/">
+                                        <a href="https://krafttrans.ru/about/certificates/">
                                             Лицензии и сертификаты</a>
                                     </li>
                                     <li>
-                                        <a href="https://krafttrans.by/about/reviews/">
+                                        <a href="https://krafttrans.ru/about/reviews/">
                                             Отзывы</a>
                                     </li>
                                     <li>
-                                        <a href="https://krafttrans.by/about/projects/">
+                                        <a href="https://krafttrans.ru/about/projects/">
                                             Проекты компании</a>
                                     </li>
                                     <li>
-                                        <a href="https://krafttrans.by/about/politika-konfidentsialnosti-personalnykh-dannykh.php">
-                                            Политика конфиденциальности персональных данных</a>
+                                        <a href="https://krafttrans.ru/about/politika-okhrany-okruzhayushchey-sredy.php">
+                                            Политика охраны окружающей среды</a>
                                     </li>
                                     <li>
-                                        <a href="https://krafttrans.by/about/politika-v-otnoshenii-faylov-cookie.php">
+                                        <a href="https://krafttrans.ru/about/trebovaniya-k-partneram-i-podryadchikam-krafttrans-v-chasti-korporativnoy-sotsialnoy-otvetstvennosti.php">
+                                            Требования к Партнерам и Подрядчикам КРАФТТРАНС в части корпоративной
+                                            социальной ответственности</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://krafttrans.ru/about/politika-konfidentsialnosti-.php">
+                                            Политика конфиденциальности</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://krafttrans.ru/about/politika-v-otnoshenii-faylov-cookie.php">
                                             Политика в отношении файлов cookie</a>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                        <div class="header_vl_right dropdown">
+                            <a class="dropbtn" href="https://krafttrans.ru/services/">Услуги</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/gruzoperevozki-iz-kitaya/">
+                                            Грузоперевозки из Китая
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/aviaperevozki-gruzov/aviaperevozki_iz_kitaya/">
+                                                    Авиаперевозки из Китая</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/avtomobilnye-gruzoperevozki/avtomobilnye-gruzoperevozki-iz-kitaya/" class="menu__sub-link">
+                                                    Автомобильные грузоперевозки из Китая</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/zheleznodorozhnye-gruzoperevozki/zhd_perevozki_iz_kitaya/" class="menu__sub-link">
+                                                    Железнодорожные перевозки из Китая</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/kontejnernye-perevozki/kontejnernye-perevozki-iz-kitaya/" class="menu__sub-link">
+                                                    Контейнерные грузоперевозки из Китая</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-sbornyh-gruzov/dostavka-sbornykh-gruzov-zh-d-transportom-iz-kitaya/" class="menu__sub-link">
+                                                    Перевозка сборных грузов</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/">
+                                            Грузоперевозки из Турции
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_2">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/">
+                                                    Грузоперевозки из Турции</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/novyy-razdel-turtsiya/" class="menu__sub-link">
+                                                    Автомобильные грузоперевозки из Турции через Грузию</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/avtomobilnye-gruzoperevozki-iz-turtsii-cherez-gruziyu-i-azerbaydzhan/" class="menu__sub-link">
+                                                    Автомобильные грузоперевозки из Турции через Грузию и Азербайджан</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/gruzoperevozki-iz-turtsii-na-parom/" class="menu__sub-link">
+                                                    Грузоперевозки из Турции на пароме</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/morskie-konteynernye-gruzoperevozki-iz-turtsii/" class="menu__sub-link">
+                                                    Морские контейнерные грузоперевозки из Турции</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/aviaperevozka-gruzov-iz-turtsii/" class="menu__sub-link">
+                                                    Авиаперевозка грузов из Турции</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/zheleznodorozhnye-konteynernye-perevozki-iz-turtsii/" class="menu__sub-link">
+                                                    Железнодорожные контейнерные перевозки из Турции</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/gruzoperevozki-iz-turtsii/negabaritnye-gruzoperevozki-iz-turtsii/" class="menu__sub-link">
+                                                    Негабаритные грузоперевозки из Турции</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/aviaperevozki-gruzov/">
+                                            Авиационные перевозки
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_3">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/aviaperevozki-gruzov/aviaperevozki_iz_usa/">
+                                                    Авиаперевозки из США</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/aviaperevozki-gruzov/aviaperevozki_opasnyih_gruzov/" class="menu__sub-link">
+                                                    Авиаперевозки опасных грузов</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/aviaperevozki-gruzov/charternye-aviaperevozki-gruzov/" class="menu__sub-link">
+                                                    Чартерные авиаперевозки грузов</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/aviaperevozki-gruzov/aviaperevozka-zhivotnykh.php" class="menu__sub-link">
+                                                    Авиаперевозка животных</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/avtomobilnye-gruzoperevozki/">
+                                            Автомобильные грузоперевозки
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_4">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/avtomobilnye-gruzoperevozki/auto_cargoes/">
+                                                    Автомобильные перевозки сборных грузов</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/avtomobilnye-gruzoperevozki/oversized/" class="menu__sub-link">
+                                                    Автомобильные перевозки негабаритных грузов</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/avtomobilnye-gruzoperevozki/avtoperevozki_opasnyih_gruzov/" class="menu__sub-link">
+                                                    Автомобильные перевозки опасных грузов</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/avtomobilnye-gruzoperevozki/vnutrirossijskie-perevozki/" class="menu__sub-link">
+                                                    Внутрироссийские грузоперевозки</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/avtomobilnye-gruzoperevozki/avtomobilnye-gruzoperevozki-iz-kitaya/" class="menu__sub-link">
+                                                    Автомобильные перевозки из Китая</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/zheleznodorozhnye-gruzoperevozki/">
+                                            Железнодорожные перевозки
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_5">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/zheleznodorozhnye-gruzoperevozki/zhd_perevozki_iz_kitaya/">
+                                                    Железнодорожные перевозки из Китая</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/import-eksport/">
+                                            Импорт / Экспорт
 
-                            </div>
-                        </div>
-                        <div class="header_vl_right dropdown">
-                            <a class="dropbtn" href="https://krafttrans.by/services/">Услуги</a>
-                            <div class="dropdown-content">
-                                <ul class="dropdown-content-list">
-                                    <li></li>
-                                </ul>
-                                <a href="https://krafttrans.by/services/gruzoperevozki-iz-kitaya/">
-                                    Грузоперевозки из Китая</a>
-                                <a href="https://krafttrans.by/services/aviaperevozki-gruzov/">
-                                    Авиаперевозки грузов</a>
-                                <a href="https://krafttrans.by/services/avtomobilnye-gruzoperevozki/">
-                                    Автомобильные грузоперевозки</a>
-                                <a href="https://krafttrans.by/services/perevozka-sbornyh-gruzov/">
-                                    Перевозка сборных грузов</a>
-                                <a href="https://krafttrans.by/services/perevozka-nalivnykh-gruzov/">
-                                    Перевозка наливных грузов</a>
-                                <a href="https://krafttrans.by/services/proektnye-perevozki/">
-                                    Проектные перевозки</a>
-                                <a href="https://krafttrans.by/services/perevozka-nalivnykh-gruzov-vo-fleksitankakh/">
-                                    Перевозка наливных грузов во флекситанках</a>
-                                <a href="https://krafttrans.by/services/morskie-gruzoperevozki/">
-                                    Морские грузоперевозки</a>
-                                <a href="https://krafttrans.by/services/kontejnernye-perevozki/">
-                                    Контейнерные грузоперевозки</a>
-                                <a href="https://krafttrans.by/services/obyazatelnaya-markirovka-obuvi-kodami-data-matrix.php">
-                                    Маркировка обуви</a>
-                                <a href="https://krafttrans.by/services/zheleznodorozhnye-gruzoperevozki/">
-                                    Железнодорожные перевозки</a>
-                                <a href="https://krafttrans.by/services/perevozka-negabaritnyh-gruzov/">
-                                    Негабаритные грузоперевозки</a>
-                                <a href="https://krafttrans.by/services/tamozhennye-uslugi/">
-                                    Таможенное оформление</a>
-                            </div>
-                        </div>
-                        <div class="header_vl_right dropdown">
-                            <a class="dropbtn" href="https://krafttrans.by/partners/">Партнерам</a>
-                            <div class="dropdown-content">
-                                <ul class="dropdown-content-list">
-                                    <li></li>
-                                </ul>
-                                <a href="https://krafttrans.by/partners/">
-                                    Партнерам</a>
-                                <a href="https://krafttrans.by/partners/trucks/">
-                                    Предложить транспорт</a>
-                            </div>
-                        </div>
+                                        </a>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/kontejnernye-perevozki/">
+                                            Контейнерные грузоперевозки
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_7">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/kontejnernye-perevozki/kontejnernye-perevozki-iz-kitaya/">
+                                                    Контейнерные грузоперевозки из Китая</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/kontejnernye-perevozki/kontejnernye-perevozki-iz-usa/">
+                                                    Контейнерные грузоперевозки из США</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/kontejnernye-perevozki/morskie-kontejnernye-perevozki/">
+                                                    Морские контейнерные перевозки</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/kontejnernye-perevozki/kontejnernye-zheleznodorozhnye-perevozki/">
+                                                    Железнодорожные контейнерные перевозки</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/kontejnernye-perevozki/kontejnernye-avtomobilnye-perevozki/">
+                                                    Автомобильные контейнерные Перевозки</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/markirovka-gruzov/">
+                                            Маркировка грузов
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_8">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/markirovka-gruzov/markirovka-obuvi/">
+                                                    Маркировка обуви</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/perevozka-negabaritnyh-gruzov/">
+                                            Негабаритные грузоперевозки
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_9">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-negabaritnyh-gruzov/machinery-carriage/">
+                                                    Перевозка техники</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-negabaritnyh-gruzov/perevozka-transformatorov-i-generatorov/">
+                                                    Перевозка трансформаторов и генераторов</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-negabaritnyh-gruzov/negabaritnye-perevozki-selskokhozyaystvennoy-tekhniki/">
+                                                    Негабаритные перевозки сельскохозяйственной техники</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-negabaritnyh-gruzov/transportirovka-neftekhimicheskogo-oborudovaniya-/">
+                                                    Транспортировка нефтихимического оборудования</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-negabaritnyh-gruzov/negabaritnye-perevozki-sudov-katerov-i-yakht/">
+                                                    Негабаритные перевозки судов, катеров и яхт</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/morskie-gruzoperevozki/">
+                                            Морские грузоперевозки
 
-    <!--                    <div class="header_vl_right">-->
-    <!--                        <a href="https://krafttrans.by/about/">О компании&nbsp</a>-->
-    <!--                    </div>-->
-    <!--                    <div class="header_vl_right">-->
-    <!--                        <a href="https://krafttrans.by/services/">Услуги&nbsp</a>-->
-    <!--                    </div>-->
-    <!--                    <div class="header_vl_right">-->
-    <!--                        <a href="https://krafttrans.by/partners/">Партнерам&nbsp</a>-->
-    <!--                    </div>-->
-                        <div class="header_vl_right">
-                            <a href="https://krafttrans.by/about/projects/">Проекты&nbsp</a>
-                        </div>
-                        <div class="header_vl_right dropdown">
-                            <a class="dropbtn" href="https://krafttrans.by/working_at/">Карьера</a>
-                            <div class="dropdown-content">
-                                <ul class="dropdown-content-list">
-                                    <li></li>
+                                        </a>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/perevozka-sbornyh-gruzov/">
+                                            Перевозка сборных грузов
+                                            <img src="{% static 'tn_ved_main/img/arrow.png' %}" alt="2">
+                                        </a>
+                                        <ul class="dropdown-content-sub-list srvc_bl_11">
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-sbornyh-gruzov/germany/">
+                                                    Сборные грузы из Германии</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-sbornyh-gruzov/italy/">
+                                                    Сборные грузы из Италии</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-sbornyh-gruzov/europe/">
+                                                    Сборные грузы из Европы</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://krafttrans.ru/services/perevozka-sbornyh-gruzov/dostavka-sbornykh-gruzov-zh-d-transportom-iz-kitaya/">
+                                                    Сборные грузы ж/д транспортом из Китая</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/perevozka-nalivnyh-gruzov/">
+                                            Перевозка наливных грузов
+
+                                        </a>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/services/tamozhennye-uslugi/">
+                                            Таможенные услуги
+
+                                        </a>
+                                    </li>
                                 </ul>
-                                <a href="https://krafttrans.by/working_at/personnel_policy/">
-                                    Политика в отношении персонала</a>
-                                <a href="https://krafttrans.by/working_at/vacancies/">
-                                    Вакансии</a>
                             </div>
                         </div>
-    <!--                    <div class="header_vl_right">-->
-    <!--                        <a href="https://krafttrans.by/working_at/">Карьера&nbsp</a>-->
-    <!--                    </div>-->
+                        <div class="header_vl_right dropdown">
+                            <a class="dropbtn" href="https://krafttrans.ru/partners/">Партнерам</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/partners/trucks/">
+                                            Предложить транспорт
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="header_vl_right">
-                            <a href="https://krafttrans.by/contacts/minsk/">Контакты&nbsp</a>
+                            <a href="https://krafttrans.ru/about/projects/">Проекты&nbsp</a>
+                        </div>
+                        <div class="header_vl_right dropdown">
+                            <a class="dropbtn" href="https://krafttrans.ru/working_at/">Карьера</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+<!--                                    <li class="menu__link">-->
+<!--                                        <a href="https://krafttrans.by/working_at/personnel_policy/">-->
+<!--                                            Политика в отношении персонала</a>-->
+<!--                                    </li>-->
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/working_at/vacancies/">
+                                            Вакансии</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header_vl_right dropdown">
+                            <a href="https://krafttrans.ru/contacts/moskva/">Контакты&nbsp</a>
+                            <div class="dropdown-content">
+                                <ul class="dropdown-content-list">
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/contacts/russia/">
+                                            Россия</a>
+                                    </li>
+                                    <li class="menu__link">
+                                        <a href="https://krafttrans.ru/contacts/belarus/">
+                                            Беларусь</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="header_vl_left">
                             <a href="{% url 'home' %}">Санкции</a>

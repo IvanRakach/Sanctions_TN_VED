@@ -4,6 +4,20 @@ html, body{
     padding: 0;
     /*font-family: "arial";*/
 }
+/* -------------------------------------- */
+/* -------------------------------------- */
+/* -------------------------------------- */
+
+
+
+
+/* -------------------------------------- */
+/* -------------------------------------- */
+/* -------------------------------------- */
+
+
+
+
 .wrapper{
     min-height: 100%;
     display: flex;
@@ -62,19 +76,30 @@ header{
     /*background-color: lightgreen;*/
 }
 /* верхняя часть хедера (регион) */
-.region{
+.region {
     width: 100px;
-    padding-top: 5%;
+    padding-top: 6.5%;
     padding-left: 2%; /* 14% */
     float: left;
 }
-.region span{
+.region a{
     text-decoration: 1px underline dashed;
     text-underline-offset: 2px;
     text-underline-position: right;
     color: #D61A0C;
 }
-
+.office_number{
+    text-decoration: none;
+    color: #000;
+}
+.office_number_big{
+    font-size: 16px;
+    font-weight: bold;
+}
+.office_number:hover{
+    text-decoration: underline;
+    color: #D61A0C;
+}
 
 select {
    /*margin: 50px;
@@ -140,7 +165,7 @@ select {
     width: 80%;
     margin: 0 auto;
 }
-/* блок с словом и кнопкой запросить */
+/* блок с словом и кнопкой "запросить ставку" */
 .wrapper_top{
     display: block;
     float: left;
@@ -439,45 +464,114 @@ tr:hover{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff; /* #f1f1f1 */
-    min-width: 160px;
+    background-color: #f1f1f1; /* #f1f1f1 */
+    min-width: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+
 }
 .dropdown-content ul{
-    margin-left: 0;
-    padding-left: 0;
+    text-decoration: none;
     list-style: none;
-}
+    /*margin-top: 0;*/
 
-.dropdown-content a {
+}
+.dropdown-content-list > li {
+    margin-left: -40px;
+}
+.dropdown-content-list > li > a > img{
+    width: 12px;
+    height: 12px;
+    padding-top: 1.5%;
+    float: right;
+}
+.dropdown-content-list > li > a {
     color: #3475BF;
-    padding: 5px 9px;
+    padding: 3px 20px;
     text-decoration: none;
     display: block;
     font-weight: Normal;
-    font-size: 12px;
+    font-size: 14px;
     text-align: left;
     text-decoration: underline;
+}
+.dropdown-content-list > li > a:hover{
+    color: black;
+    background-color: #fff;
+}
+
+.dropdown-content-sub-list > li {
+    margin-left: -40px;
 
 }
-.dropdown-content a:before{
-    /*border: 2px solid transparent;
-    border-left: 2px solid red;*/
-    /*display:block;
-    width:0;
-    height:0;
-    border-left:5px solid red;
-    border-top:4px solid transparent;
-    border-bottom:4px solid transparent;
-    border-right:0;
-    content: "";*/
-    /*list-style-image: url("../img/tr-for-ul.jpg");*/
+.dropdown-content-sub-list{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-top: 2%; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    margin-bottom: 5%;
+    /*padding: 0px 0px 0px 5px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 250px;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content-sub-list > li > a{
+    display: block;
+    color: #3475BF;
+    padding: 3px 20px;
+    text-decoration: none;
+    font-weight: Normal;
+    font-size: 14px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.dropdown-content-sub-list > li > a:hover{
+    color: black;
+    background-color: #fff;
+}
+.dropdown-content-sub-list{
+    display: none;
+}
+.dropdown-content-list > li:hover .dropdown-content-sub-list{
+    display: block;
+}
+
+.srvc_bl_2{
+    margin-top: 12%;
+}
+.srvc_bl_3{
+    margin-top: 20%;
+}
+.srvc_bl_4{
+    margin-top: 25%;
+}
+.srvc_bl_5{
+    margin-top: 37%;
+}
+.srvc_bl_7{
+    margin-top: 55%;
+}
+.srvc_bl_8{
+    margin-top: 64%;
+}
+.srvc_bl_9{
+    margin-top: 72%;
+}
+.srvc_bl_11{
+    margin-top: 90%;
 }
 .dropdown-content a:hover {
     background-color: #fff;
     text-decoration: underline;
 }
+
 
 
 .dropdown:hover .dropdown-content {display: block;}
